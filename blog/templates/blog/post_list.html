@@ -3,20 +3,20 @@
     <title>Mr.Monopy!</title>
   </head>
   <body>
-    <h1>Hey richy rich!</h1>
-    <strong>I have <br>44 millions dollar</strong>
-    <p><em>Alec let's go ride Rolls Royce</em></p>
     <div>
       <h1><a href="">My first post</a></h1>
-      <p>Hui pipis'ka ninis'ka</p>
+      <p>Hui pipis'ka ninis'ka, Richi Rich!</p>
     </div>
-    <div>
-      <p>pushblished : date xx.xx.xxxx</p>
-      <h3><a href="">Second post</a></h3>
-      <p>
-        ohohohohohoh Man UUUUUUUUUUUUUU win all!!! Lucky lucky lucky days
-      </p>
-    </div>
-
+    {% for post in posts %}
+          <div>
+            <p>
+              published: {{ post.published_date }}
+            </p>
+            <h1><a href ="">{{ post.title }}</a></h1>
+            <p>
+              {{ post.text|linebreaksbr }}
+            </p>
+          </div>
+    {% endfor %}
   </body>
 </html>
